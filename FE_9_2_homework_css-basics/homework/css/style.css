@@ -1,0 +1,142 @@
+@media print {
+    .tm-sidebar {
+        display: none;
+    }
+    .tm-main-content {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .flex-2-col {
+        display: block;
+    }
+    .flex-item {
+        text-align: center;
+    }
+    .tm-team-description-container {
+        max-width: none;
+        text-align: left;
+    }
+    .tm-content-box {
+        margin-bottom: 0;
+    }
+    .pad {
+        padding: 0 70px 0 60px;
+    }
+    .tm-banner {
+        height: 250px;
+    }
+    #about,
+    .heading,
+    .blocks,
+    #ideas,
+    #contact,
+    .tm-content-box > img {
+        display: none;
+    }
+    .tm-footer {
+        padding-top: 20px;
+    }
+    .tm-content-box h2 {
+        color: #0c67f9;
+    }
+}
+@media screen {
+    /*2*/
+    .thumbnail {
+        border-radius: 50%;
+    }
+    .box-bg:hover {
+        background-color: rgb(49,176,213);
+    }
+    li .tm-box-bg-title:hover {
+        color: white;
+        font-weight: bold;
+    }
+    /*3*/
+    p::first-letter {
+        color: #76cdd7;
+        font-size: 30px;
+    }
+    /*4*/
+    .tm-sidebar, .tm-content-box {
+        box-shadow: 0 0 1em #888888;
+    }
+    /*5*/
+    .tm-content-box {
+        position: relative;
+    }
+    .tm-content-box::after {
+        content: "";
+        position: absolute;
+        left: 0; 
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: 30px solid #31b0d5; 
+        border-right: 120px solid transparent;
+    }
+    /*6*/
+    .active h2 {
+        color: gainsboro;
+        letter-spacing: 5px;
+    }
+    /*7*/
+    h2 + p {
+        font-style: italic;
+    }
+    /*8*/
+    .tm-section-description {
+        line-height: 30px;
+        text-indent: 25px;
+    }
+    /*9*/
+    .heading a:visited {
+        color: silver;
+    }
+    .heading a {
+        text-decoration: none;
+        color: black;
+    }
+    .heading a:hover {
+        text-decoration: underline double;
+        color: rgb(169,224,230);
+    }
+    .heading .text::after {
+        content: "New";
+        vertical-align: super;
+        font-size: 10px;
+        color: red;
+    }
+    .heading h2 {
+        text-align: center;
+        color: #76cdd7;
+    }
+    /*10*/
+    .blocks li:nth-child(2n+1) {
+        background-color: #f2f2f2;
+    }
+    .blocks .boxes p::first-letter {
+        color: black;
+    }
+    /*11*/
+    .tm-sidebar li:not(:last-child) {
+        border-bottom: 2px dotted silver;
+    }
+    /*12*/
+    .form-control, .submit-btn {
+        color: red;
+    }
+    .mandatory-field::after {
+        content:"*";
+        color: red;
+        font-size: 20px;
+    }
+    .submit-btn:hover {
+        color: white;
+        background-color: rgb(49,176,213);
+    }
+    /*some remarks in 'Our work'*/
+    .tm-team-description-container {
+    max-width: none;
+    }
+}
