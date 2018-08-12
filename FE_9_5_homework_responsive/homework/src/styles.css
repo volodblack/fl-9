@@ -1,0 +1,153 @@
+/* :root {
+  --bg-color--dark: #0a1223;
+  --bg-color--light: #fff;
+  --link: #5d5d5d;
+  --link--active: #54597d;
+  --link--hover: #54597d;
+  --article-title: #ddd;
+  --article-title--dark: #000;
+  --thumbnail--description: #5d5d5d;
+  --btn-color: #fff;
+  --btn-bg-color: #5ebcff;
+  --navigation-border-bottom: #ddd;
+  --thumbnail-title: #484747;
+} */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  background-color: #0a1223;
+}
+nav li {
+  display: inline;
+  padding: 0 15px;
+}
+nav li a {
+  text-decoration: none;
+  color: #5d5d5d;
+}
+.current a,
+nav li a:hover {
+  color: #54597d;
+}
+nav {
+  text-align: right;
+  margin: 30px 20px 0 0;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+  margin: 200px 20px;
+  font-size: 5vw;
+}
+.thumbnail h2 {
+  background: linear-gradient( to right, #ddd, #000);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 33px;
+}
+.facts {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.photo-item img {
+  max-width: 100%;
+}
+.facts div {
+  max-width: 50%;
+  margin-bottom: 50px;
+}
+.facts:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.thumbnail p {
+  text-indent: 20px;
+  text-align: justify;
+  color: #5d5d5d;
+}
+.thumbnail h2,
+.thumbnail p {
+  padding: 0 20px;
+}
+footer {
+  display: none;
+}
+@media (max-width: 991px) {
+  nav {
+    text-align: center;
+    margin-right: 0;
+  }
+  nav ul {
+    padding: 0;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .facts {
+    display: block;
+    max-width: 575px;
+    margin: auto;
+  }
+  .facts div {
+  max-width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  body {
+    background-color: #fff;
+    margin-bottom: 100px;
+  }
+  nav {
+    text-align: left;
+    margin: 0;
+  }
+  nav ul {
+    padding-left: 0;
+    margin: 5px 0;
+  }
+  nav li {
+    display: block;
+    padding: 10px 0 10px 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  nav .current a {
+    font-weight: bold;
+  }
+  h1 {
+    color: #000;
+  }
+  .thumbnail h2 {
+    background: unset;
+    -webkit-text-fill-color: unset;
+    -webkit-background-clip: unset;
+    color: #484747;
+  }
+  .thumbnail h2,
+  .thumbnail p {
+    padding: 0 40px;
+  }
+  footer {
+    display: block;
+  }
+  footer a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    border-radius: 50%;
+    background-color: #5ebcff;
+    color: #fff;
+    text-decoration: none;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 20px 0;
+    box-shadow: 6px 10px 10px #dddddd;
+  }
+  footer a:active {
+    background-color:#dddddd;
+  }
+}
