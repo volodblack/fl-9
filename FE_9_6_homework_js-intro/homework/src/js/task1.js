@@ -1,26 +1,18 @@
-const a = parseFloat(prompt('Enter amount of money '));
-const d = parseFloat(prompt('Enter the discount without %'));
-const maxDsc = 100;
-
-const answerTemplate = (a,d,price,savedMoney) => `
-Price without discount: ${+a.toFixed(2)}
-Discount: ${d}% 
-Price with discount: ${+price.toFixed(2)}
-Saved: ${+savedMoney.toFixed(2)}
-`; 
-
+const amount = parseFloat(prompt('Enter amount of money','0'));
+const discount = parseFloat(prompt('Enter discount without %', '0'));
+const maxDiscount = 100;
 let answer;
-
-if (validValue(a) || validValue(d) || d > maxDsc) {
+function validate(num) {
+    return typeof num !=='number' || isNaN(num) || num < 0; 
+}
+if (validate(amount) || validate(discount) || discount > maxDiscount) {
     answer = 'Invalid data';
 } else {
-    const savedMoney = a*(d/100);
-    const price = a-savedMoney; 
-    answer = answerTemplate(a,d,savedMoney,price);
+    const saved = amount*discount/maxDiscount;
+    const newPrice = amount-saved;
+    answer = `Price without discount: ` + +amount.toFixed(2) +
+    `\nDiscount: ` + +discount.toFixed(2) + `%` +
+    `\nPrice with discount: ` + +newPrice.toFixed(2) + 
+    `\nSaved: ` + +saved.toFixed(2);
 }
-
-function validValue(numb) {
-    return isNaN(numb) || typeof numb !== 'number' || numb < 0;
-}
-
 console.log(answer);
