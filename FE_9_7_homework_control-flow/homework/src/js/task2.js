@@ -14,11 +14,11 @@ const numericOne = 1;
 const multiplier = {
     range: 2,
     maxWin: 3
-}
+};
 
 const game = confirm('Do you want to play a game?');
 
-if (game === false) {
+if (!game) {
     alert('You did not become a millionaire, but can.');
 } else {
     startGame();
@@ -27,7 +27,7 @@ if (game === false) {
 function startGame() {
     getRandomInt(range);
     for (let i = 1; i < maxAttempt; i++) {
-        const attempt = maxAttempt-i;
+        let attempt = maxAttempt-i;
         if (attempt === 3) {
             possiblePrize = maxWin;
         } else if (attempt === 2) {
@@ -35,10 +35,11 @@ function startGame() {
         } else if (attempt === numericOne) {
             possiblePrize = Math.floor(maxWin/4);
         }
-        let number = parseFloat(prompt(`Enter number from 0 to `+ range +
-        `\nAttempts left: ` + attempt + 
-        `\nTotal prize: ` + totalPrize + `$` + 
-        `\nPossible prize on current attempt: ` + possiblePrize + `$`));
+        let number = parseFloat(prompt(`
+        Enter number from 0 to ${range}
+        Attempts left: ${attempt}
+        Total prize: ${totalPrize}$
+        Possible prize on current attempt: ${possiblePrize}$`));
         if (random === number) {
             if (i === numericOne) {
                 win = maxWin;
@@ -65,9 +66,9 @@ function getRandomInt(x) {
 }
 
 function losingGame() {
-    alert('Thank you for a game. Your prize is: ' + totalPrize + '$');
+    alert(`Thank you for a game. Your prize is: ${totalPrize}$`);
     let newGame = confirm('Do you want to play again?');
-    if (newGame === true) {
+    if (newGame) {
         range = initialRange;
         maxWin = initialMaxWin;
         totalPrize = 0;
@@ -77,8 +78,8 @@ function losingGame() {
 
 function continueGame() {
     totalPrize = totalPrize + win;
-    let contGame = confirm('Congratulation!   Your prize is: ' + totalPrize + '$. Do you want to continue?')
-    if (contGame === true) {
+    let contGame = confirm(`Congratulation!   Your prize is: ${totalPrize}$. Do you want to continue?`)
+    if (contGame) {
         range *= multiplier.range;
         maxWin *= multiplier.maxWin;
         startGame();  
