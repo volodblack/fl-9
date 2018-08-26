@@ -1,8 +1,6 @@
 function isPrime(a) {
     const two = 2;
-    if (typeof a !== 'number' || !Number.isInteger(a) || a < two) {
-        return false;
-    } else if (a === two) {
+    if (a === two) {
         return true;
     } else if (a % two === 0) {
         return false;
@@ -14,4 +12,3 @@ function isPrime(a) {
     }
     return true;   
 }
-// console.log(isPrime(5));
