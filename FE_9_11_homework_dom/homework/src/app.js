@@ -3,6 +3,7 @@ const itemList = document.getElementById('items');
 const activeInput = document.getElementById('new-item');
 const maxLiElements = 10;
 
+let dragSrcEl = null;
 form.addEventListener('submit', addItem);
 itemList.addEventListener('click', removeItem);
 
@@ -14,16 +15,19 @@ function addItem(e) {
     if (liElements.length >= maxLiElements) {
         maxLi.style.visibility = 'visible';
         activeInput.blur();
+
         return false;
     }
     
     let newItem = document.getElementById('new-item').value;
-    if (newItem === '') {
+    if (newItem.trim() === '') {
+
         return false;
     }
     
     const li = document.createElement('li');
     li.className = 'to-do-item';
+    li.setAttribute('draggable','true');
 
     const divDinBtnAndSpan = document.createElement('div');
     divDinBtnAndSpan.className = 'check-and-span';
@@ -59,11 +63,45 @@ function addItem(e) {
     document.getElementById('new-item').value = '';
 
     cropDinBtn.addEventListener('click', checkItem);
+
     function checkItem(e) {
         if (e.target.classList.contains('check-btn')) {
             iconCheckText.nodeValue = 'check_box';
         }
     }
+
+    function dragStart(e) {
+        dragSrcEl = this;
+        e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function dragOver(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        e.dataTransfer.dropEffect = 'move';
+
+        return false;
+    }
+
+    function drop(e) {
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        }
+        if (dragSrcEl !== this) {
+            dragSrcEl.parentNode.removeChild(dragSrcEl);
+            this.parentNode.insertBefore(dragSrcEl, this);
+        }
+
+        return false;
+    }
+
+    const allTask = document.querySelectorAll('.to-do-item');
+    [].forEach.call(allTask, function(task) {
+        task.addEventListener('dragstart', dragStart, false);
+        task.addEventListener('dragover', dragOver, false);
+        task.addEventListener('drop', drop, false);
+    });
 }
 
 function removeItem(e) {
