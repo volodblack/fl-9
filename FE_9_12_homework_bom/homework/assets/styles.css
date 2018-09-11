@@ -1,2 +1,19 @@
-/* Your styles go here */
-
+body {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+.list {
+    list-style-type: none;
+}
+.to-do-item {
+    display: flex;
+    justify-content: space-between;
+}
+.check-and-span {
+    display: flex;
+    align-items: center;
+}
+.li-span-text {
+    padding-left: 10px;
+}

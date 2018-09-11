@@ -8,6 +8,25 @@
 <body>
   <div id="root"></div>
 
+    <div class="main-page">
+      <h1 class="main-title">Simple TODO aplication</h1>
+      <button class="buttons" id="addNewTask">Add new task</button>
+      <p class="empty">TODO is empty</p>
+      <ul id="list"></ul>
+    </div>
+
+    <div class="add-new-item">
+      <input type="text" placeholder="New task" class="inputs" id="input-new" autofocus>
+      <button class="buttons" id="savedBtn">Save changes</button>
+      <button class="buttons" id="canceledBtn">Canceled</button>
+    </div>
+
+    <div class="modify-page">
+      <input type="text" class="inputs" id="input-modify">
+      <button class="buttons" id="savedBtnMod">Save changes</button>
+      <button class="buttons" id="canceledBtnMod">Canseled</button>
+    </div>
+
   <script src="./src/app.js"></script>
 </body>
 </html>
