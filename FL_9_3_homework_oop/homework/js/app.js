@@ -14,6 +14,11 @@ function ShoppingCart({name, owner, maxSize}) {
         }
         let addedProdDate = new Date();
         product.date = addedProdDate.toString();
+        for (let i = 0; i < this.productsArr.length; i++) {
+            if (this.productsArr[i].name === product.name) {
+                this.removeProduct(product);
+            }
+        }
         if (this.productsArr.length < maxSize) {
             this.productsArr.push(product);
         } else {
@@ -21,10 +26,7 @@ function ShoppingCart({name, owner, maxSize}) {
             for (let i = 0; i < this.productsArr.length; i++) {
                 if (min.price > this.productsArr[i].price) {
                     min = this.productsArr[i];
-                }
-                if (this.productsArr[i].name === product.name) {
-                    this.removeProduct(product);
-                }
+                }    
             }
             this.removeProduct(min);
             this.productsArr.push(product);
@@ -190,9 +192,9 @@ const vladShopCart = new ShoppingCart({
 stevesShopCart
     .addNewProduct(apple)
     .addNewProduct(cherry)
-    .addNewProduct(orange)              
-    .addNewProduct(watermelon) /*Apple will be deleted from stevesShopCart */          
-    .addNewProduct(banana) /*because it have the lowest price and steves-max-products = 4 */
+    .addNewProduct(orange)
+    .addNewProduct(watermelon) /*Apple will be deleted from stevesShopCart */
+    .addNewProduct(banana); /*because it have the lowest price and steves-max-products = 4 */
 
 stevesShopCart
     .removeProduct(watermelon)
