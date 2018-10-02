@@ -1,7 +1,7 @@
-function ShoppingCart({name, owner, maxSize}) {
-    this.name = name;
-    this.owner = owner;
-    this.maxSize = maxSize;
+function ShoppingCart(obj) {
+    this.name = obj.name;
+    this.owner = obj.owner;
+    this.maxSize = obj.maxSize;
     this.productsArr = [];
     
     let _logs = [];
@@ -19,7 +19,7 @@ function ShoppingCart({name, owner, maxSize}) {
                 this.removeProduct(product);
             }
         }
-        if (this.productsArr.length < maxSize) {
+        if (this.productsArr.length < this.maxSize) {
             this.productsArr.push(product);
         } else {
             let min = this.productsArr[0];
@@ -86,10 +86,10 @@ function ShoppingCart({name, owner, maxSize}) {
     }
 }
 
-function Product({name, description, price}) {
-    this.name = name;
-    this.description = description;
-    this.price = price;
+function Product(obj) {
+    this.name = obj.name;
+    this.description = obj.description;
+    this.price = obj.price;
     
     let _logs = [];
     let cardIn = '';
