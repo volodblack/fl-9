@@ -110,13 +110,14 @@ Racebot.prototype.move = function(direction) {
 
 function Speedbot(obj) {
     Bot.call(this, obj);
-    this.prepareEngine = function() {
-        this.setSpeed(this.getSpeed() + 2);
-    }
 }
 
 Speedbot.prototype = Object.create(Bot.prototype);
 Speedbot.prototype.constructor = Speedbot;
+
+Speedbot.prototype.prepareEngine = function() {
+    this.setSpeed(this.getSpeed() + 2);
+}
 
 Speedbot.prototype.move = function(direction) {
     movevement.call(this, direction);
