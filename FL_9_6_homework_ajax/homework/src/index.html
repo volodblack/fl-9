@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>FL 9 3 homework AJAX</title>
+</head>
+
+<body>
+  <div class="form-div">
+    <h1 class="main-title">Enter your coordinates</h1>
+    <form>
+      <div class="coordinates">
+        <label for="display-latitude" class="label-lat">Latitude:</label>
+        <input type="text" id="display-latitude" name="latitude" class="input-field" placeholder="49.844008" required>
+      </div>
+
+      <div class="coordinates">
+        <label for="display-longitude" class="label-lon">Longitude:</label>
+        <input type="text" id="display-longitude" name="longitude" class="input-field" placeholder="24.026236" required>
+      </div>
+
+      <div class="coordinates">
+        <input type="submit" id="submit" class="track-button" value="Track">
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <h2 id="result-title"></h2>
+    <div id="result-for-water"></div>
+    <div id="result-for-land"></div>
+  </div>
+  <div id="load-result"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
