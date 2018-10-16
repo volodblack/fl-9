@@ -8,9 +8,6 @@ function getData() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let obj = JSON.parse(xhr.responseText);
-
-            console.log(obj);
-            console.log(obj.media[0].display_url);
             
             getElements(obj);
 
@@ -163,7 +160,7 @@ function getElements(obj) {
                     $hoverText.addClass('show-text');
                 });
             };
-            
+        
             $('.button-more').css({display : 'none'});
         };
         view++;
@@ -191,9 +188,13 @@ function getPopUp(obj) {
                             <div class='pop-up-header-img'>    
                                 <img src='${obj.profile_pic_url}'>
                             </div>
-                            <div class='pop-up-header-name'>
-                                <span><b>${obj.username} &bull; <a href='#'>Follow</a></b></span>
+                            <div class='pop-up-header-name-location'>
+                                <div class='pop-up-header-name'>
+                                    <span><b>${obj.username} &bull; <a href='#'>Follow</a></b></span>
+                                </div>
+                                <div class='pop-up-header-location'>${obj.media[i].location}</div>
                             </div>
+
                         </div>
                         <hr>
                         <div class='post-text-comment'>
@@ -224,6 +225,9 @@ function modalPopUp(obj) {
     for (let i = 0; i < obj.media.length; i++) {
         $(`.photo-div-${i}`).click(function() {
             $(`.modal-${i}`).css({display : 'block'});
+            for (let y = 0; y <= i - 1; y++) {
+                $(`.modal-${y}`).appendTo('.modal');
+            }
         });
     };
 
@@ -237,6 +241,17 @@ function modalPopUp(obj) {
 
     $('.close-icon').click(function() { 
         $('.close').css({display : "none"});
+        for (let i = 0; i < obj.media.length; i++) {
+            $(`.modal-${i}`).appendTo('.modal');
+        };
     });
 
+    $(document).keydown(function(e) {
+        if (e.keyCode == 27) {
+            $('.close').css({display : "none"});
+        }
+        for (let i = 0; i < obj.media.length; i++) {
+            $(`.modal-${i}`).appendTo('.modal');
+        };
+    });
 }
