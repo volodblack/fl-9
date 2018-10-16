@@ -70,7 +70,7 @@ function getElements(obj) {
             }, function(){
             $hoverText.addClass('show-text');
         });
-    };
+    }
 
     const $moreButton = $(`
         <div class='view-more'>
@@ -101,7 +101,7 @@ function getElements(obj) {
                 } else if (i >= 15 && i <= 17) {
                     $divPhoto.append($img);
                     $divRaw6.append($divPhoto);
-                };
+                }
     
                 $photos.append($divRaw5);
                 $photos.append($divRaw6);
@@ -123,7 +123,7 @@ function getElements(obj) {
                     $hoverText.addClass('show-text');
                 });
 
-            };
+            }
 
         } else if (view === 2) {
             const $divRaw7 = $('<div>');
@@ -159,10 +159,10 @@ function getElements(obj) {
                 }, function(){
                     $hoverText.addClass('show-text');
                 });
-            };
+            }
         
             $('.button-more').css({display : 'none'});
-        };
+        }
         view++;
 
     });
@@ -216,7 +216,7 @@ function getPopUp(obj) {
 
         $modalPopUp.append($popUpDiv);
         $container.append($modalPopUp);
-    };
+    }
 
     modalPopUp(obj);    
 }
@@ -229,7 +229,7 @@ function modalPopUp(obj) {
                 $(`.modal-${y}`).appendTo('.modal');
             }
         });
-    };
+    }
 
     $('.next-btn').click(function() {
         $(`.close:first`).fadeOut().next().fadeIn().end().appendTo('.modal');
@@ -243,7 +243,7 @@ function modalPopUp(obj) {
         $('.close').css({display : "none"});
         for (let i = 0; i < obj.media.length; i++) {
             $(`.modal-${i}`).appendTo('.modal');
-        };
+        }
     });
 
     $(document).keydown(function(e) {
@@ -252,6 +252,6 @@ function modalPopUp(obj) {
         }
         for (let i = 0; i < obj.media.length; i++) {
             $(`.modal-${i}`).appendTo('.modal');
-        };
+        }
     });
 }
