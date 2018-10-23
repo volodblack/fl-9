@@ -1,0 +1,12 @@
+{
+    "undef": true,
+    "unused": true,
+    "es5": true,
+    "strict": false,  
+    "globalstrict": false,
+    "debug": false,
+    "devel": true,
+    "bitwise": true,
+    "newcap": true,
+    "noempty": true
+}
