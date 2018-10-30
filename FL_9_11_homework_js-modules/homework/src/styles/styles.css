@@ -1,0 +1,36 @@
+body {
+    max-width: 900px;
+    margin: auto;
+}
+
+.calculator {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator-raw-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+button:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(119, 170, 211);
+}
+
+button:active {
+    background: rgb(29, 68, 104);
+}
+
+button, .screen {
+    width: 65px;
+    padding: 1rem;
+    margin: 2px 0;
+    font-size: 1rem;
+}
+
+.screen {
+    width: 167px;
+    text-align: right;
+}

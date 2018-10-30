@@ -1,0 +1,1 @@
+body{max-width:900px;margin:auto}.calculator{margin-top:20px;display:flex;justify-content:center}.calculator-raw-1{display:flex;justify-content:space-between}button:hover{color:#000;background:#77aad3}button:active{background:#1d4468}.screen,button{width:65px;padding:1rem;margin:2px 0;font-size:1rem}.screen{width:167px;text-align:right}
