@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$turqoise: #26a69a;
+$red: #E57373;
+$gray: #f8f8f8;
+$white: #fff;
+
+$shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+.root {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    max-width: 1100px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+}
+
+header, footer, main {
+    display: flex;
+    justify-content: center;
+}
+
+.fixed-header {
+    background-color: $white;
+    position: fixed;
+    top: 0;    
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid $gray;
+}
+#search {
+    margin-left: 10px;
+    border-width: 0 0 1px 0;
+    border-color: black;
+    padding: 5px 0;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    border-top: 1px solid $gray;
+    width: 100%;
+    background-color: $white;
+}
+
+main {
+    margin: 50px 0 80px 0;
+}
+
+.container-for-users {
+    width: 100%;
+}
+
+.headers-columns {
+    background-color: $turqoise;
+    color: $white; 
+    padding: 10px 0;
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: 10% 15% 15% 25% 15% 10% 10%;
+    grid-template-rows: 1fr;
+    padding-left: 10px;
+}
+
+.item-raw {
+    height: 90px;
+}
+
+.item-raw > div {
+    display: flex;
+    align-items: center;
+}
+
+.item-raw:nth-child(odd) {
+    background-color: $gray;
+}
+
+.remove {
+    background-color: $red;
+    color: $white;
+    padding: 10px;
+    border: 0; 
+}
+
+.photo img {
+    height: 70px;
+}
+
+.text-footer {
+    margin: 10px;
+}
+
+.load-more {
+    margin-bottom: 10px;
+    width: 40%;
+    border-radius: 15px;
+    padding: 10px;
+    background: $gray;
+}
