@@ -1,0 +1,88 @@
+body {
+    margin: auto;
+    max-width: 900px;
+    background-color: rgb(248, 248, 248);
+    font-family: sans-serif;
+}
+.main-title {
+    text-align: center;
+    font-size: 25px;
+}
+.search {
+    min-width: 97.5%;
+    padding: 10px;
+    border: 1px solid rgb(228, 227, 227);
+}
+.post {
+    background-color: rgb(255, 255, 255);
+    margin: 30px 0 0 0;
+    padding: 20px;
+}
+.photo-name {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.user-name {
+    padding: 10px; 
+}
+.user-photo {
+    max-width: 80px;
+    border-radius: 50%;
+}
+.newPost {
+    background: rgb(255, 255, 255);
+}
+button {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(127, 127, 230);
+    color: rgb(127, 127, 230);
+    border-radius: 3px;
+    padding: 10px;
+}
+.add {
+    margin: 30px 0;
+}
+.default-post {
+    border: 1px solid rgb(228, 227, 227);
+}
+.input-title {
+    padding: 10px;
+    margin: 20px 0 10px 0 ;
+    width: 98%;
+}
+#message {
+    width: 98.2%;
+    padding: 10px; 
+    height: 70px;
+    margin: 10px 0 20px 0;
+}
+.modal {
+    box-shadow: 0 5px 14px rgba(0,0,0,0.5);
+}
+.hearts {
+    padding: 3px;
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+}
+.hearts-bgrd-gray {
+    background-color: rgb(128, 128, 128);
+}
+.hearts-bgrd-red {
+    background-color: rgb(192, 11, 11);
+}
+.heart-btn {
+    border: 0 solid rgb(255, 255, 255);
+    padding: 2px;
+    color: rgb(0, 0, 0);
+}
+.post-description {
+    text-align: justify;
+    font-size: 14px;
+}
+.post-title {
+    font-size: 20px;
+}
+.liked {
+    background-color: red;
+}
