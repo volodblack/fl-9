@@ -1,0 +1,49 @@
+.addBtn {
+    width: 100%;
+    padding: 15px;
+}
+
+table, th, td {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.empty-title {
+    text-align: center;
+    font-size: 25px;
+}
+
+tbody input {
+    width: 98%;
+    height: 30px;
+    background-color: rgb(255, 255, 255); 
+}
+
+.tableBtn {
+    width: 40%;
+    height: 30px;
+}
+
+.actionBtn {
+    display: flex;
+    justify-content: space-around;
+}
+
+table {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.btn {
+    border: 1px solid rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+}
+
+.btn:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+th, td {
+    width: 20%;
+    text-align: center;
+}

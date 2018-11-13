@@ -1,0 +1,40 @@
+<div class="lessons-container">
+  <button (click)="showModal()" class="addBtn btn">Add new lesson</button>
+  <app-modal [isOpen]="isShown"></app-modal>
+  <h2 *ngIf="lessons.length === 0" class="empty-title">You haven't added anything yet</h2>
+  <table *ngIf="lessons.length !== 0" class="lections-table" >
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Topic</th>
+        <th>Date</th>
+        <th>Lecturer</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lesson of lessons">
+        <td>{{lesson.id}}</td>
+        <td>
+          <input [disabled]="!isEditMode" [(ngModel)]="lesson.topic" type="text" value={{lesson.topic}}>
+        </td>
+        <td>
+          <input [disabled]="!isEditMode" [(ngModel)]="lesson.date" type="text" value={{lesson.date}}>
+        </td>
+        <td>
+          <input [disabled]="!isEditMode" [(ngModel)]="lesson.lecturer" type="text" value={{lesson.lecturer}}>
+        </td>
+        <td class="actionsBtn">
+          <div *ngIf="isEditMode" class="actionBtn">
+            <button (click)="cancelOrSave()" class="saveBtn btn tableBtn">Save</button>
+            <button (click)="cancelOrSave()" class="cancelBtn btn tableBtn">Cancel</button>
+          </div>
+          <div *ngIf="!isEditMode" class="actionBtn">
+            <button (click)="toggleEditMode()" class="editBtn btn tableBtn">Edit</button>
+            <button (click)="delete(lesson)" class="delBtn btn tableBtn">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
